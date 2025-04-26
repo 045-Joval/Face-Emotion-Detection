@@ -18,6 +18,15 @@ The final app detects faces in real-time via webcam and predicts facial emotions
 
 ---
 
+## 📸 Screenshot
+
+![Screenshot 2025-04-26 143843](https://github.com/user-attachments/assets/4048713a-2152-43e7-b3e4-fc63ffe1728d)
+![Screenshot 2025-04-26 143809](https://github.com/user-attachments/assets/70e50aee-00b2-42f0-a00a-6e0bdf34b136)
+![Screenshot 2025-04-26 143828](https://github.com/user-attachments/assets/94cdac3e-e983-4b83-a392-894423c4a9c5)
+![Screenshot 2025-04-26 144931](https://github.com/user-attachments/assets/f75f689b-2c61-491b-98f9-bef02bad318d)
+
+---
+
 ## 📦 Project Overview
 
 | Component     | Description |
@@ -165,15 +174,6 @@ npm run dev
 - Bounding boxes over faces
 - Dynamic emotion confidence table with progress bars
 - Clean React UI
-
----
-
-## 📸 Screenshot
-
-![Screenshot 2025-04-26 143843](https://github.com/user-attachments/assets/4048713a-2152-43e7-b3e4-fc63ffe1728d)
-![Screenshot 2025-04-26 143809](https://github.com/user-attachments/assets/70e50aee-00b2-42f0-a00a-6e0bdf34b136)
-![Screenshot 2025-04-26 143828](https://github.com/user-attachments/assets/94cdac3e-e983-4b83-a392-894423c4a9c5)
-![Screenshot 2025-04-26 144931](https://github.com/user-attachments/assets/f75f689b-2c61-491b-98f9-bef02bad318d)
 
 ---
 
