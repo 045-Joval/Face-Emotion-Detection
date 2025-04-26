@@ -170,13 +170,17 @@ npm run dev
 
 ## 📸 Screenshot
 
-> *(Add a screenshot or GIF of the app running here)*
+![image](https://github.com/user-attachments/assets/47c44823-11e6-4eea-8f22-143719ccf8e1)
+![Screenshot 2025-04-26 101148](https://github.com/user-attachments/assets/a7c871ec-6952-426c-8cb6-7a0d996e5d98)
+![image](https://github.com/user-attachments/assets/251d75cd-1048-41d5-8bf7-b970add434aa)
+
 
 ---
 
 ## ⚠️ Notes & Tips
 
 - Works best in **good lighting**
+- Works best without spectacles
 - Supports **desktop browsers** with webcam + WebGL
 - Mobile support may vary (WebRTC + WebGL support required)
 - For multiple face support, loop over BlazeFace detections
