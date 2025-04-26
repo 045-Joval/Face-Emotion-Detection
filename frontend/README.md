@@ -82,7 +82,9 @@ Once started:
 
 ## 📸 Screenshot
 
-> Add your screenshot or a screen recording here to showcase the app in action!
+![image](https://github.com/user-attachments/assets/47c44823-11e6-4eea-8f22-143719ccf8e1)
+![Screenshot 2025-04-26 101148](https://github.com/user-attachments/assets/a7c871ec-6952-426c-8cb6-7a0d996e5d98)
+![image](https://github.com/user-attachments/assets/251d75cd-1048-41d5-8bf7-b970add434aa)
 
 ## 🔐 Permissions
 
