@@ -13,6 +13,13 @@ This is a real-time facial emotion detection web application built with **React*
 
 ---
 
+## 📸 Screenshot
+
+![Screenshot 2025-04-26 143843](https://github.com/user-attachments/assets/4048713a-2152-43e7-b3e4-fc63ffe1728d)
+![Screenshot 2025-04-26 143809](https://github.com/user-attachments/assets/70e50aee-00b2-42f0-a00a-6e0bdf34b136)
+![Screenshot 2025-04-26 143828](https://github.com/user-attachments/assets/94cdac3e-e983-4b83-a392-894423c4a9c5)
+![Screenshot 2025-04-26 144931](https://github.com/user-attachments/assets/f75f689b-2c61-491b-98f9-bef02bad318d)
+
 ## 🚀 Features
 
 - Real-time webcam-based face detection using BlazeFace.
@@ -79,12 +86,6 @@ Once started:
 2. Requests access to your webcam.
 3. Detects faces and classifies emotions frame-by-frame.
 4. Displays bounding boxes and a dynamic table of emotion probabilities.
-
-## 📸 Screenshot
-
-![image](https://github.com/user-attachments/assets/47c44823-11e6-4eea-8f22-143719ccf8e1)
-![Screenshot 2025-04-26 101148](https://github.com/user-attachments/assets/a7c871ec-6952-426c-8cb6-7a0d996e5d98)
-![image](https://github.com/user-attachments/assets/251d75cd-1048-41d5-8bf7-b970add434aa)
 
 ## 🔐 Permissions
 
