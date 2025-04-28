@@ -14,7 +14,7 @@ The final app detects faces in real-time via webcam and predicts facial emotions
 
 ## 🌐 Demo
 
-👉 **Live Demo**: [Click here to try it out!](https://dulcet-mochi-34cced.netlify.app/) 
+👉 **Live Demo**: [Click here to try it out!](https://effervescent-macaron-416806.netlify.app/) 
 
 ---
 
