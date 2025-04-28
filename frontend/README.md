@@ -9,7 +9,7 @@ This is a real-time facial emotion detection web application built with **React*
 
 ## 🌐 Demo
 
-👉 **Live Demo**: [Click here to try it out!](https://dulcet-mochi-34cced.netlify.app/) 
+👉 **Live Demo**: [Click here to try it out!](https://effervescent-macaron-416806.netlify.app/) 
 
 ---
 
