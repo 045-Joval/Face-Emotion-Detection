@@ -16,6 +16,7 @@ const EmotionDetector = () => {
     const [status, setStatus] = useState('Loading models...');
     const [detectedFaces, setDetectedFaces] = useState([]);
     const [isMobile, setIsMobile] = useState(false);
+    const [loadingEmotion, setLoadingEmotion] = useState(0);
 
     const loadModels = useCallback(async () => {
         try {
@@ -178,19 +179,37 @@ const EmotionDetector = () => {
         tf.env().set('WEBGL_CPU_FORWARD', false);
         tf.env().set('WEBGL_PACK', true);
 
-        setIsMobile(window.innerWidth < 768); // Detect mobile
+        setIsMobile(window.innerWidth < 768);
         loadModels();
+
+        const emotionInterval = setInterval(() => {
+            setLoadingEmotion(prev => (prev + 1) % EMOTION_LABELS.length);
+        }, 500);
 
         return () => {
             if (animationFrameIdRef.current) cancelAnimationFrame(animationFrameIdRef.current);
             if (streamRef.current) {
                 streamRef.current.getTracks().forEach(track => track.stop());
             }
+            clearInterval(emotionInterval);
             try { blazefaceModelRef.current?.dispose?.(); } catch (e) {}
             try { emotionModelRef.current?.dispose?.(); } catch (e) {}
             try { tf.disposeVariables(); } catch (e) {}
         };
     }, [loadModels]);
+
+    const getEmotionEmoji = (emotion) => {
+        switch(emotion) {
+            case 'Angry': return '😠';
+            case 'Disgust': return '🤢';
+            case 'Fear': return '😨';
+            case 'Happy': return '😄';
+            case 'Sad': return '😢';
+            case 'Surprise': return '😲';
+            case 'Neutral': return '😐';
+            default: return '🔄';
+        }
+    };
 
     return (
         <div style={{ padding: '10px', maxWidth: '800px', margin: '0 auto' }}>
@@ -222,7 +241,9 @@ const EmotionDetector = () => {
 
             <div style={{ marginTop: '20px', textAlign: 'center' }}>
                 {status.startsWith('Loading') && (
-                    <div className="loader"></div>
+                    <div style={{ fontSize: '36px', animation: 'pulse 1s infinite ease-in-out' }}>
+                        {getEmotionEmoji(EMOTION_LABELS[loadingEmotion])}
+                    </div>
                 )}
                 <p>Status: {status}</p>
             </div>
@@ -244,11 +265,11 @@ const EmotionDetector = () => {
                         animation: 'float 3s ease-in-out infinite'
                     }}
                 >
-                    <strong>{face.dominantEmotion.emotion} ({(face.dominantEmotion.probability * 100).toFixed(1)}%)</strong>
+                    <strong>{getEmotionEmoji(face.dominantEmotion.emotion)} {face.dominantEmotion.emotion} ({(face.dominantEmotion.probability * 100).toFixed(1)}%)</strong>
                     {face.emotions.map((e, idx) => (
                         <div key={idx} style={{ marginBottom: '4px' }}>
                             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                                <span>{e.emotion}</span>
+                                <span>{getEmotionEmoji(e.emotion)} {e.emotion}</span>
                                 <span>{(e.probability * 100).toFixed(1)}%</span>
                             </div>
                             <div style={{ background: '#555', borderRadius: '4px', overflow: 'hidden' }}>
@@ -264,19 +285,10 @@ const EmotionDetector = () => {
             ))}
 
             <style>{`
-                .loader {
-                    border: 6px solid #f3f3f3;
-                    border-top: 6px solid #4caf50;
-                    border-radius: 50%;
-                    width: 30px;
-                    height: 30px;
-                    animation: spin 1s linear infinite;
-                    margin: 0 auto 10px;
-                }
-
-                @keyframes spin {
-                    0% { transform: rotate(0deg); }
-                    100% { transform: rotate(360deg); }
+                @keyframes pulse {
+                    0% { transform: scale(1); }
+                    50% { transform: scale(1.2); }
+                    100% { transform: scale(1); }
                 }
 
                 @keyframes float {
